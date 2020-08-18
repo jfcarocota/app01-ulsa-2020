@@ -5,12 +5,15 @@ body{
     background-color: #1f2833;
 }
 
-a{
+a, ul{
     color: white;
     font-family: 'Roboto', sans-serif;
     text-decoration: none;
 }
 
+.sub-category{
+    color: yellow;
+}
 
 h1{
     color: red;
