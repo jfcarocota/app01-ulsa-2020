@@ -43,6 +43,7 @@ let catList = [
 categories.dogs.button.onclick = ()=> {
     if(categories.dogs.content.innerHTML){
         categories.dogs.content.innerHTML = '';
+        
         return;
     }
     dogList.forEach(dog =>{
