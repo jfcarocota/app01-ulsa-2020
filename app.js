@@ -6,7 +6,10 @@ const categories = {
         button: document.getElementById('dogs-link'),
         content: document.getElementById('dogs')
     },
-    cats: document.getElementById('cats'),
+    cats: {
+        button: document.getElementById('cats-link'),
+        content: document.getElementById('cats')
+    },
     mices: document.getElementById('mices')
 }
 
@@ -34,10 +37,26 @@ let dogList = [
 ];
 
 let catList = [
-    "ocicat cat breed",
-    "siberian cat breed",
-    "bengal cat",
-    "chartreux cat breed"
+    {
+        name: "ocicat cat breed",
+        region: "EE UU",
+        description: ""
+    },
+    {
+        name: "siberian cat breed",
+        region: "Rusia",
+        description: ""
+    },
+    {
+        name: "bengal cat",
+        region: "EE UU",
+        description: ""
+    },
+    {
+        name: "chartreux cat breed",
+        region: "France, Siria",
+        description: ""
+    }
 ];
 
 categories.dogs.button.onclick = ()=> {
@@ -51,6 +70,21 @@ categories.dogs.button.onclick = ()=> {
             <span>${dog.name}</span>
             <div>region: ${dog.region}</div>
             <div>description: ${dog.description}</div>
+        </li>`;//ES6 Emacsript 6
+    });
+}
+
+categories.cats.button.onclick = ()=> {
+    if(categories.cats.content.innerHTML){
+        categories.cats.content.innerHTML = '';
+        
+        return;
+    }
+    catList.forEach(cat =>{
+        categories.cats.content.innerHTML += `<li>
+            <span>${cat.name}</span>
+            <div>region: ${cat.region}</div>
+            <div>description: ${cat.description}</div>
         </li>`;//ES6 Emacsript 6
     });
 }
