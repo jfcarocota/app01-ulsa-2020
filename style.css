@@ -84,7 +84,11 @@ div{
     width: 20%;
 }
 
-@media only screen and (max-width: 600px){
+#meme-image{
+    width: 20%;
+}
+
+@media only screen and (max-width: 800px){
     body{
         background-color: #fff;
     }

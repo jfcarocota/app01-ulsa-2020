@@ -1,6 +1,12 @@
 const helloButton = document.getElementById('hello-button');
 const petList = document.getElementById('pet-list');
 
+const meme = {
+    image: document.getElementById('meme-image'),
+    title: document.getElementById('meme-title'),
+    author: document.getElementById('meme-author')
+}
+
 const categories = {
     dogs: {
         button: document.getElementById('dogs-link'),
@@ -88,4 +94,16 @@ categories.cats.button.onclick = ()=> {
         </li>`;//ES6 Emacsript 6
     });
 }
+
+const GetMemes = async ()=>{
+    const data = await fetch('https://meme-api.herokuapp.com/gimme');
+    const jsonData = await data.json();
+
+    const {url, author, nsfw, postLink, spoiler, subreddit, title} = jsonData;//desestructuración
+    meme.title.innerHTML = `title: ${title}`;
+    meme.author.innerHTML = `author: ${author}`;
+    meme.image.src = url;
+}
+
+GetMemes();
 
